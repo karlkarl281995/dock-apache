@@ -1,9 +1,10 @@
-version: '3.8'
-
 services:
   apache-web1:
     image: dock-apache:v1
     ports:
-      - "80"
-    restart: unless-stopped
+      - "${CONTAINER_NAME}80:80"
+    environment:
+      - CONTAINER_NAME=apache-web1
+    deploy:
+      replicas: 5
 
