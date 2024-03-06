@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  apache-web1:
+    image: dock-apache:v1
+    ports:
+      - "80"
+    restart: unless-stopped
+
